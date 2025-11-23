@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24Log - ATC24 Utility</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header text-center">
+        <h1>24Log</h1>
+        <p class="lead">Unofficial ATC24 Session Tracker</p>
+    </header>
+
+    <main class="container my-5">
+        <section id="log">
+            <div class="card p-4 shadow-lg mb-5">
+                <h2 class="mb-4">Log a Session</h2>
+                <form id="sessionForm" class="row g-3">
+                    <div class="col-md-4">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="airport" class="form-label">Airport</label>
+                        <select id="airport" class="form-select" required></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="position" class="form-label">Frequency / Position</label>
+                        <select id="position" class="form-select" required>
+                            <option value="">Select Frequency</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="startTime" class="form-label">Start Time</label>
+                        <input type="time" id="startTime" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="endTime" class="form-label">End Time</label>
+                        <input type="time" id="endTime" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="hours" class="form-label">Hours</label>
+                        <input type="number" id="hours" class="form-control" min="0" step="0.1" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="notes" class="form-label">Notes</label>
+                        <input type="text" id="notes" class="form-control" placeholder="Optional notes">
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-primary btn-lg">Add Session</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <h2 class="mb-3">Session History</h2>
+            <div id="sessionList" class="list-group shadow-lg"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
